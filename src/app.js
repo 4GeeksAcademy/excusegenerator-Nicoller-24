@@ -3,7 +3,7 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = () => {
-  document.querySelector("#btn").addEventListener("click", () => {
+  document.querySelector("#btn-excuse").addEventListener("click", () => {
     document.querySelector("#the-excuse").innerHTML = generateExcuse();
   });
 };
@@ -15,21 +15,21 @@ let generateExcuse = () => {
   let posetion = ["homework", "toe", "car", "shoe"];
   let where = ["on the street", "in my house", "in my driveway"];
 
-  let proIndx = Math.floor(Math.random() * pronoun.length);
-  let subjIndx = Math.floor(Math.random() * subject.length);
-  let actionIndex = Math.floor(Math.random() * action.length);
-  let posetionIndex = Math.floor(Math.random() * posetion.length);
-  let whereIndex = Math.floor(Math.random() * where.length);
+  let proRandom = Math.floor(Math.random() * pronoun.length);
+  let subjRandom = Math.floor(Math.random() * subject.length);
+  let actionRandom = Math.floor(Math.random() * action.length);
+  let posetionRandom = Math.floor(Math.random() * posetion.length);
+  let whereRandom = Math.floor(Math.random() * where.length);
 
   return (
-    pronoun[proIndx] +
+    pronoun[proRandom] +
     " " +
-    subject[subjIndx] +
+    subject[subjRandom] +
     " " +
-    action[actionIndex] +
+    action[actionRandom] +
     " " +
-    posetion[posetionIndex] +
+    posetion[posetionRandom] +
     " " +
-    where[whereIndex]
+    where[whereRandom]
   );
 };
