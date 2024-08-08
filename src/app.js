@@ -8,6 +8,11 @@ window.onload = () => {
   });
 };
 
+function RamdonIndexArray(array) {
+  let index = Math.floor(Math.random() * array.length);
+  return array[index];
+}
+
 let generateExcuse = () => {
   let pronoun = ["A", "The"];
   let subject = ["joger", "racoon", "dog", "driver", "comedian", "pincone"];
@@ -15,21 +20,15 @@ let generateExcuse = () => {
   let posetion = ["homework", "toe", "car", "shoe"];
   let where = ["on the street", "in my house", "in my driveway"];
 
-  let proIndexRandom = Math.floor(Math.random() * pronoun.length);
-  let subjIndexRandom = Math.floor(Math.random() * subject.length);
-  let actionIndexRandom = Math.floor(Math.random() * action.length);
-  let posetionIndexRandom = Math.floor(Math.random() * posetion.length);
-  let whereIndexRandom = Math.floor(Math.random() * where.length);
-
   return (
-    pronoun[proIndexRandom] +
+    `${RamdonIndexArray(pronoun)}` +
     " " +
-    subject[subjIndexRandom] +
+    `${RamdonIndexArray(subject)}` +
     " " +
-    action[actionIndexRandom] +
+    `${RamdonIndexArray(action)}` +
     " " +
-    posetion[posetionIndexRandom] +
+    `${RamdonIndexArray(posetion)}` +
     " " +
-    where[whereIndexRandom]
+    `${RamdonIndexArray(where)}`
   );
 };
